@@ -39,10 +39,10 @@ Now we have built a custom Apex REST class which will allow the external applica
 In the step we will verify our apex REST class in the workbench tool
 
   1. Open https://workbench.developerforce.com/
-  2. Select  Environment as ‘Production’ and select the checkbox to agree the terms and condition 
+  2. Select Environment as **‘Production’** and select the checkbox to agree the terms and condition 
   ![alt tag](https://raw.github.com/Karanraj/df15_Apex_REST/master/Images/Workbench.png)
-  3. Click Login with Salesforce button and enter your developer edition account credentials 
-  4. In the Workbench tool select Utilities > REST Explorer
+  3. Click **Login with Salesforce** button and enter your developer edition account credentials 
+  4. In the Workbench tool select **Utilities > REST Explorer**
   ![alt tag](https://raw.github.com/Karanraj/df15_Apex_REST/master/Images/RestExplorer.png)
   5. In the REST Explorer window paste the following url in the box
   
@@ -52,8 +52,12 @@ In the step we will verify our apex REST class in the workbench tool
   ```
 
   ![alt tag](https://raw.github.com/Karanraj/df15_Apex_REST/master/Images/HttpGet.png)
+  
 
->Note: CD439877 is the Account Number field value of an Account record, you can also pass any valid Account number from your org to get the details. To Get Account Number, Open any account record in your dev org and then copy the ‘Account Number’ field value
+>**Note:** *CD439877* is the sample Account Number field value of an Account record, you have to pass valid Account number values from your org. Follow the below details to copy the Account Number value 
+
+  1. To Get Account Number, Open any account record in your dev org  
+  2. Then copy the ‘Account Number’ field value
 
   ![alt tag](https://raw.github.com/Karanraj/df15_Apex_REST/master/Images/AccountNumber.png)
 
@@ -61,8 +65,8 @@ In the step we will verify our apex REST class in the workbench tool
 
 In this step we will add the two more methods in our apex class to support POST and DELETE service
 
-1. Open Developer console
-2. Click File > Open > Apex Class  and open ‘MyRestResource’ class
+1. Open **Developer console**
+2. Click **File > Open > Apex Class**  and open **‘MyRestResource’** class
 3. Copy and paste the below methods in the apex class
 
   ```java
@@ -85,18 +89,19 @@ In this step we will add the two more methods in our apex class to support POST 
         Account account = [SELECT Id FROM Account WHERE Id = :accountId];
         delete account;
     }
-    
   ```
+  
 Your final apex REST class should look like this 
-  ![alt tag](https://raw.github.com/Karanraj/df15_Apex_REST/master/Images/FinalApexClass.png)
+
+![alt tag](https://raw.github.com/Karanraj/df15_Apex_REST/master/Images/FinalApexClass.png)
 
 #### Step 4: Verify Apex REST services in Workbench 
 
 ##### POST REST Services:
 
   1. Open workbench tool and login with your developer account
-  2. Go to Utilities > REST Explorer
-  3. Select POST and in the URL box paste the following URL
+  2. Go to **Utilities > REST Explorer**
+  3. Select **POST** option and in the URL box paste the following URL
   
 
   ```
@@ -113,7 +118,7 @@ Your final apex REST class should look like this
   }
   ```
   ![alt tag](https://raw.github.com/Karanraj/df15_Apex_REST/master/Images/HttpPost.png)
-  5. Click ‘Execute’
+  5. Click **‘Execute’**
   
 Salesforce returns a response with the Id of record. To view the record in your org, copy the Id by clicking the Show RAW response and follow the below steps
 
@@ -123,23 +128,22 @@ Salesforce returns a response with the Id of record. To view the record in your 
 
 ##### DELETE  REST Service
 
-To delete account record with our Apex REST service, you have to pass the ID of the account record
-
   1. Open workbench tool and login with your developer account
-  2. Go to Utilities > REST Explorer
-  3. Select ‘Delete’ Option and  in the URL box paste the following URL
+  2. Go to **Utilities > REST Explorer**
+  3. Select **‘Delete’** Option and in the URL box paste the following URL
   
 
   ```
   /services/apexrest/Account/00128000005dOI1AAM
   ```
+  
   ![alt tag](https://raw.github.com/Karanraj/df15_Apex_REST/master/Images/HttpDelete.png)
 
   4. Click ‘Execute’
 	
 Now the record is deleted successfully from your org, you can verify in your org.
 
->Note: 00128000005dOI1AAM - It is the ID of the Account record. You have to pass the ID of the Account record from your developer org.
+>**Note:** *00128000005dOI1AAM* - It is the sample Salesforce ID of the Account record. You have to pass the Salesforce ID of the Account record from your developer org.
 
 ## Summary:
 
