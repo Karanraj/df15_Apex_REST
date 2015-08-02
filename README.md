@@ -13,6 +13,7 @@ Create an Apex REST class that will allow the external application to GET, POST 
 
   1. Login into your developer org
   2. In Salesforce, click **your name** in the upper right corner of the screen. In the dropdown menu, click **Developer Console**
+  ![alt tag](https://raw.github.com/Karanraj/df15_Apex_REST/master/Images/DeveloperConsole.png)
   3. In the Developer Console, click **File > New > Apex class**. Specify *‘MyRestResource’* as a class name and click **ok**
   4. Copy and paste the below code
   
@@ -39,9 +40,10 @@ In the step we will verify our apex REST class in the workbench tool
 
   1. Open https://workbench.developerforce.com/
   2. Select  Environment as ‘Production’ and select the checkbox to agree the terms and condition 
-
+  ![alt tag](https://raw.github.com/Karanraj/df15_Apex_REST/master/Images/Workbench.png)
   3. Click Login with Salesforce button and enter your developer edition account credentials 
   4. In the Workbench tool select Utilities > REST Explorer
+  ![alt tag](https://raw.github.com/Karanraj/df15_Apex_REST/master/Images/RestExplorer.png)
   5. In the REST Explorer window paste the following url in the box
   
 
@@ -49,14 +51,11 @@ In the step we will verify our apex REST class in the workbench tool
   /services/apexrest/Account/CD439877
   ```
 
+  ![alt tag](https://raw.github.com/Karanraj/df15_Apex_REST/master/Images/HttpGet.png)
 
-
-	
 >Note: CD439877 is the Account Number field value of an Account record, you can also pass any valid Account number from your org to get the details. To Get Account Number, Open any account record in your dev org and then copy the ‘Account Number’ field value
 
-
-
-
+  ![alt tag](https://raw.github.com/Karanraj/df15_Apex_REST/master/Images/AccountNumber.png)
 
 #### Step 3: Add Post and Delete service in Apex class
 
@@ -65,6 +64,7 @@ In this step we will add the two more methods in our apex class to support POST 
 1. Open Developer console
 2. Click File > Open > Apex Class  and open ‘MyRestResource’ class
 3. Copy and paste the below methods in the apex class
+
   ```java
    @HttpPost
     global static String doPost(String name,
@@ -88,8 +88,7 @@ In this step we will add the two more methods in our apex class to support POST 
     
   ```
 Your final apex REST class should look like this 
- 
-
+  ![alt tag](https://raw.github.com/Karanraj/df15_Apex_REST/master/Images/FinalApexClass.png)
 
 #### Step 4: Verify Apex REST services in Workbench 
 
@@ -99,6 +98,7 @@ Your final apex REST class should look like this
   2. Go to Utilities > REST Explorer
   3. Select POST and in the URL box paste the following URL
   
+
   ```
   /services/apexrest/Account
   ``` 
@@ -112,15 +112,14 @@ Your final apex REST class should look like this
     "website" : "developer.salesforce.com/trailhead"
   }
   ```
+  ![alt tag](https://raw.github.com/Karanraj/df15_Apex_REST/master/Images/HttpPost.png)
   5. Click ‘Execute’
   
 Salesforce returns a response with the Id of record. To view the record in your org, copy the Id by clicking the Show RAW response and follow the below steps
 
   6. Open your developer org
   7. Paste the Id of the record as following screenshot 
-
-
-
+  ![alt tag](https://raw.github.com/Karanraj/df15_Apex_REST/master/Images/RecordID.png)
 
 ##### DELETE  REST Service
 
@@ -129,19 +128,18 @@ To delete account record with our Apex REST service, you have to pass the ID of 
   1. Open workbench tool and login with your developer account
   2. Go to Utilities > REST Explorer
   3. Select ‘Delete’ Option and  in the URL box paste the following URL
+  
+
   ```
   /services/apexrest/Account/00128000005dOI1AAM
   ```
-
+  ![alt tag](https://raw.github.com/Karanraj/df15_Apex_REST/master/Images/HttpDelete.png)
 
   4. Click ‘Execute’
 	
 Now the record is deleted successfully from your org, you can verify in your org.
 
 >Note: 00128000005dOI1AAM - It is the ID of the Account record. You have to pass the ID of the Account record from your developer org.
-
-
-
 
 ## Summary:
 
@@ -152,11 +150,3 @@ Now the record is deleted successfully from your org, you can verify in your org
 * [Apex REST Documentation](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_rest_methods.htm) <br/>
 * [Force.com REST API](https://developer.salesforce.com/page/REST_API) <br/>
 * [Getting Started with the Force.com REST API](https://developer.salesforce.com/page/Getting_Started_with_the_Force.com_REST_API)
-
-
-
-
-
-
-
-
